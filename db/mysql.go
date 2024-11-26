@@ -4,6 +4,7 @@ import (
 	cfg "demo1116/config"
 	"demo1116/logger"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"go.uber.org/zap"
 )
