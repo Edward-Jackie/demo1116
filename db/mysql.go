@@ -25,12 +25,12 @@ func initMysql() {
 	Db, err = gorm.Open("mysql", dsn)
 	if err != nil {
 		logger.GLog.Error("数据库连接发生错误 err =", zap.Error(err))
+	} else {
+		logger.GLog.Info("数据库连接成功!")
 	}
 
 	// 打开GORM日志模式
 	Db.LogMode(true)
 	// 指定日志打印器
 	Db.SetLogger(gorm.Logger{logger.GormLogger{}})
-
-	logger.GLog.Info("数据库连接成功!")
 }
